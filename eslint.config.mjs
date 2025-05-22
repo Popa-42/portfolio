@@ -1,6 +1,6 @@
-import {dirname} from "path";
-import {fileURLToPath} from "url";
-import {FlatCompat} from "@eslint/eslintrc";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+import { FlatCompat } from "@eslint/eslintrc";
 import typescriptEslint from "@typescript-eslint/eslint-plugin";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
 import eslintParserTypeScript from "@typescript-eslint/parser";
@@ -15,14 +15,10 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.config({
-    extends: [
-      "next/core-web-vitals",
-      "next/typescript",
-      "plugin:prettier/recommended"
-    ],
+    extends: ["next/core-web-vitals", "next/typescript", "plugin:prettier/recommended"],
   }),
   {
-    files: ["**/*.{ts,tsx,cts,mts}"],
+    files: ["**/*.{js,ts,jsx,tsx,cjs,cts,mjs,mts}"],
     languageOptions: {
       parser: eslintParserTypeScript,
       parserOptions: {
@@ -51,17 +47,8 @@ const eslintConfig = [
         "warn",
         {
           printWidth: 120,
-          lineBreakStyle: "windows",
           preferSingleLine: true,
           group: "newLine",
-        }
-      ],
-
-      // Prettier
-      "prettier/prettier": [
-        "error",
-        {
-          endOfLine: "crlf",
         },
       ],
     },

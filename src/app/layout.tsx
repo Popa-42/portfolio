@@ -4,6 +4,7 @@ import "../../public/assets/styles/globals.css";
 
 import { IBM_Plex_Mono, IBM_Plex_Sans, IBM_Plex_Serif } from "next/font/google";
 import { clsx } from "clsx";
+import { SiteFooter } from "@/components/layout/footer";
 
 const ibmPlexSans = IBM_Plex_Sans({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
@@ -24,8 +25,8 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Next.js Template",
-  description: "A Next.js template repository.",
+  title: "Hey 👋 | Just Popa",
+  description: "Welcome to my website",
   icons: [
     {
       rel: "icon",
@@ -42,11 +43,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body className="antialiased">
-        <main className={clsx(ibmPlexSans.variable, ibmPlexSerif.variable, ibmPlexMono.variable, "font-sans")}>
+        <main
+          className={clsx(
+            ibmPlexSans.variable,
+            ibmPlexSerif.variable,
+            ibmPlexMono.variable,
+            "h-[calc(100dvh-3.75rem-1px)] font-sans",
+          )}
+        >
           {children}
         </main>
+        <SiteFooter />
       </body>
     </html>
   );

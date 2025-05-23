@@ -33,5 +33,5 @@ jobs:
           file: Dockerfile
           push: true
           tags: |
-            ghcr.io/Popa-42/portfolio:latest
-            ghcr.io/Popa-42/portfolio:${{ github.sha }}
+            ghcr.io/popa-42/portfolio:latest
+            ghcr.io/popa-42/portfolio:${{ github.sha }}

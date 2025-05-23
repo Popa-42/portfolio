@@ -47,7 +47,7 @@ RUN \
 # Production image, copy all the files and run next
 FROM base AS runner
 
-LABEL org.opencontainers.image.source=https://github.com/Popa-42/portfolio
+LABEL org.opencontainers.image.source=https://github.com/popa-42/portfolio
 
 WORKDIR /app
 

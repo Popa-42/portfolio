@@ -2,30 +2,25 @@ import React from "react";
 import type { Metadata } from "next";
 import "../../public/assets/styles/globals.css";
 
-import { IBM_Plex_Mono, IBM_Plex_Sans, IBM_Plex_Serif } from "next/font/google";
-import { clsx } from "clsx";
+import { Albert_Sans, Geist } from "next/font/google";
 import { SiteFooter } from "@/components/layout/footer";
+import SiteHeader from "@/components/layout/header";
+import { cn } from "@/lib/utils";
 
-const ibmPlexSans = IBM_Plex_Sans({
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
+const montserrat = Albert_Sans({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
-  variable: "--font-ibm-plex-sans",
+  variable: "--font-albert-sans",
 });
 
-const ibmPlexSerif = IBM_Plex_Serif({
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
+const raleway = Geist({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
-  variable: "--font-ibm-plex-serif",
-});
-
-const ibmPlexMono = IBM_Plex_Mono({
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-ibm-plex-mono",
+  variable: "--font-geist",
 });
 
 export const metadata: Metadata = {
-  title: "Hey 👋 | Just Popa",
+  title: "Welcome | Popa's Website",
   description: "Welcome to my website",
   icons: [
     {
@@ -44,17 +39,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className="antialiased">
-        <main
-          className={clsx(
-            ibmPlexSans.variable,
-            ibmPlexSerif.variable,
-            ibmPlexMono.variable,
-            "h-[calc(100dvh-3.75rem-1px)] font-sans",
-          )}
-        >
-          {children}
-        </main>
+      <body className={cn(montserrat.variable, raleway.variable, "font-sans antialiased")}>
+        <SiteHeader />
+        <main className="h-[calc(100dvh-3.75rem-1px)] overflow-auto pt-[calc(3.75rem+1px)]">{children}</main>
         <SiteFooter />
       </body>
     </html>

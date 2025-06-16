@@ -2,6 +2,7 @@
 
 import confetti from "canvas-confetti";
 import React, { useRef } from "react";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function Home() {
   const touchRef = useRef<HTMLSpanElement>(null);
@@ -15,6 +16,7 @@ export default function Home() {
     const y = (rect.top + rect.height / 2) / window.innerHeight;
 
     const defaults = {
+      zIndex: -1,
       spread: 360,
       ticks: 50,
       gravity: 0,
@@ -46,25 +48,47 @@ export default function Home() {
   }
 
   return (
-    <div className="flex h-full w-full flex-col">
-      <div className="flex items-center justify-center">
-        <div className="flex flex-col items-start justify-center">
-          <h1 className="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance sm:text-5xl">
-            UI elements
+    <div className="flex h-full w-full flex-col justify-center">
+      <div className="flex flex-col items-center justify-center gap-8 lg:flex-row">
+        <div className="flex w-full flex-col items-center justify-center lg:items-end">
+          <h1 className="scroll-m-20 text-center text-3xl font-extrabold tracking-tight text-balance sm:text-4xl">
+            Small details,
           </h1>
           <h1 className="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance sm:text-5xl">
-            you want
-          </h1>
-          <h1 className="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance sm:text-5xl">
-            to{" "}
+            big{" "}
             <span
               ref={touchRef}
-              className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent"
+              className="font bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent"
               onMouseEnter={handleHover}
+              onTouchStart={handleHover}
             >
-              touch
+              impact
             </span>
           </h1>
+        </div>
+        <div className="h-0 w-96 border-b lg:h-full lg:w-0 lg:border-l" />
+        <div className="flex w-full items-center justify-center lg:justify-start">
+          <Card className="w-96 bg-card/50">
+            <CardContent>
+              <h2 className="mb-3 text-xl leading-tight font-semibold">
+                Obsessed with the details,
+                <br />
+                eager to{" "}
+                <span
+                  className={`
+                    bg-gradient-to-r from-blue-500 via-cyan-500 to-green-500 bg-clip-text text-transparent
+                    dark:from-blue-400 dark:via-cyan-400 dark:to-green-400
+                  `}
+                >
+                  experiment
+                </span>
+              </h2>
+              <p className="text-muted-foreground">
+                I love crafting interfaces that are as enjoyable to use as they are to look at. This site is my
+                playground for exploring UI, UX, and all the small things in between.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

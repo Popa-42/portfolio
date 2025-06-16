@@ -36,9 +36,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body className={cn(montserrat.variable, raleway.variable, "font-sans antialiased")}>
-        <main className="h-full overflow-auto pt-15 md:h-[calc(100dvh-7.5rem-1px)]">{children}</main>
+        <main className="h-dvh w-dvw">{children}</main>
       </body>
     </html>
   );

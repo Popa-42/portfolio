@@ -3,9 +3,7 @@ import type { Metadata } from "next";
 import "../../public/assets/styles/globals.css";
 
 import { Albert_Sans, Geist } from "next/font/google";
-import { SiteFooter } from "@/components/layout/footer";
 import { cn } from "@/lib/utils";
-import { SiteHeader } from "@/components/layout/header";
 
 const montserrat = Albert_Sans({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -40,11 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={cn(montserrat.variable, raleway.variable, "font-sans antialiased")}>
-        <SiteHeader />
-        <main className="h-[calc(100dvh-7.75rem-85px)] overflow-auto pt-15 md:h-[calc(100dvh-7.5rem-1px)]">
-          {children}
-        </main>
-        <SiteFooter />
+        <main className="h-full overflow-auto pt-15 md:h-[calc(100dvh-7.5rem-1px)]">{children}</main>
       </body>
     </html>
   );

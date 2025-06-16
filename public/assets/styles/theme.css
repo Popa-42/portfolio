@@ -39,7 +39,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  --font-head: var(--font-albert-sans);
+  --font-head: var(--font-archivo);
   --font-sans: var(--font-geist);
 }
 

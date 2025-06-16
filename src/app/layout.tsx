@@ -2,16 +2,16 @@ import React from "react";
 import type { Metadata } from "next";
 import "../../public/assets/styles/globals.css";
 
-import { Albert_Sans, Geist } from "next/font/google";
+import { Archivo, Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 
-const montserrat = Albert_Sans({
+const archivo = Archivo({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
-  variable: "--font-albert-sans",
+  variable: "--font-archivo",
 });
 
-const raleway = Geist({
+const geist = Geist({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
   variable: "--font-geist",
@@ -37,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(montserrat.variable, raleway.variable, "font-sans antialiased")}>
+      <body className={cn(archivo.variable, geist.variable, "font-sans antialiased")}>
         <main className="h-dvh w-dvw">{children}</main>
       </body>
     </html>

@@ -29,7 +29,7 @@ export default function HilbertBackground({
   lineWidth = 1,
   mouseRadius = 100,
   strokeColor = { r: 127, g: 127, b: 127, a: 0.05 },
-  hoverColor = { r: 51, g: 157, b: 255, a: 0.4 },
+  hoverColor = { r: 51, g: 157, b: 255, a: 0.5 },
 }: HilbertBackgroundProps) {
   const canvasRef: React.RefObject<HTMLCanvasElement | null> = useRef(null);
   const mouseRef = useRef({ x: -1000, y: -1000 }); // Start weit außerhalb

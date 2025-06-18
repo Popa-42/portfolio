@@ -5,9 +5,9 @@ import React, { useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function Home() {
-  const touchRef = useRef<HTMLSpanElement>(null);
+  const touchRef = useRef<HTMLDivElement>(null);
 
-  function shootFromElement(el: HTMLSpanElement | null) {
+  function shootFromElement(el: HTMLDivElement | null) {
     if (!el) return;
 
     const rect = el.getBoundingClientRect();
@@ -52,11 +52,14 @@ export default function Home() {
       <div className="flex flex-col items-center justify-center lg:flex-row">
         <div className="flex w-full flex-col items-center justify-center pr-8 lg:items-end">
           <div
+            ref={touchRef}
             className={`
               relative
               after:absolute after:top-0 after:-z-1 after:-m-2 after:h-[calc(100%+1rem)] after:w-[calc(100%+1rem)]
               after:bg-background/90 after:p-2 after:blur-sm
             `}
+            onMouseEnter={handleHover}
+            onTouchStart={handleHover}
           >
             <h1 className="scroll-m-20 text-center text-3xl font-extrabold tracking-tight text-balance sm:text-4xl">
               small details,
@@ -64,14 +67,11 @@ export default function Home() {
             <h1 className="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance sm:text-5xl">
               big{" "}
               <span
-                ref={touchRef}
                 className={`
                   font bg-gradient-to-br from-pink-500 from-5% via-red-500 via-40% to-yellow-500 to-90% bg-clip-text
                   text-transparent
                   dark:from-pink-400 dark:via-red-400 dark:to-yellow-400
                 `}
-                onMouseEnter={handleHover}
-                onTouchStart={handleHover}
               >
                 impact
               </span>
@@ -103,8 +103,9 @@ export default function Home() {
                 </span>
               </h2>
               <p className="text-muted-foreground">
-                I love crafting interfaces that are as enjoyable to use as they are to look at. This site is my
-                playground for exploring UI, UX, and all the small things in between.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.
               </p>
             </CardContent>
           </Card>

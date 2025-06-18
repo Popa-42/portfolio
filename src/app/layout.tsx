@@ -37,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body className={cn(archivo.variable, geist.variable, "font-sans antialiased")}>
         <main className="h-dvh w-dvw">{children}</main>
         <HilbertBackground mouseRadius={150} order={5} lineWidth={1} tileSize={300} />

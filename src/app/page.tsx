@@ -16,7 +16,7 @@ export default function Home() {
     const y = (rect.top + rect.height / 2) / window.innerHeight;
 
     const defaults = {
-      zIndex: -1,
+      zIndex: -2,
       spread: 360,
       ticks: 50,
       gravity: 0,
@@ -51,28 +51,43 @@ export default function Home() {
     <div className="flex h-full w-full flex-col justify-center">
       <div className="flex flex-col items-center justify-center lg:flex-row">
         <div className="flex w-full flex-col items-center justify-center pr-8 lg:items-end">
-          <h1 className="scroll-m-20 text-center text-3xl font-extrabold tracking-tight text-balance sm:text-4xl">
-            Small details,
-          </h1>
-          <h1 className="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance sm:text-5xl">
-            big{" "}
-            <span
-              ref={touchRef}
-              className={`
-                font bg-gradient-to-br from-pink-500 from-5% via-red-500 via-40% to-yellow-500 to-90% bg-clip-text
-                text-transparent
-                dark:from-pink-400 dark:via-red-400 dark:to-yellow-400
-              `}
-              onMouseEnter={handleHover}
-              onTouchStart={handleHover}
-            >
-              impact
-            </span>
-          </h1>
+          <div
+            className={`
+              relative
+              after:absolute after:top-0 after:-z-1 after:-m-2 after:h-[calc(100%+1rem)] after:w-[calc(100%+1rem)]
+              after:bg-background/90 after:p-2 after:blur-sm
+            `}
+          >
+            <h1 className="scroll-m-20 text-center text-3xl font-extrabold tracking-tight text-balance sm:text-4xl">
+              small details,
+            </h1>
+            <h1 className="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance sm:text-5xl">
+              big{" "}
+              <span
+                ref={touchRef}
+                className={`
+                  font bg-gradient-to-br from-pink-500 from-5% via-red-500 via-40% to-yellow-500 to-90% bg-clip-text
+                  text-transparent
+                  dark:from-pink-400 dark:via-red-400 dark:to-yellow-400
+                `}
+                onMouseEnter={handleHover}
+                onTouchStart={handleHover}
+              >
+                impact
+              </span>
+            </h1>
+          </div>
         </div>
-        <div className="h-0 w-96 border-b lg:h-full lg:w-0 lg:border-l" />
-        <div className="flex w-full items-center justify-center pl-8 lg:justify-start">
-          <Card className="w-96 bg-card/50">
+        <div
+          className={`
+            relative my-8 h-0 w-96 border-b
+            after:absolute after:top-0 after:-z-1 after:-m-2 after:h-[calc(100%+1rem)] after:w-[calc(100%+1rem)]
+            after:bg-background after:p-2 after:blur-sm
+            lg:h-full lg:w-0 lg:border-l
+          `}
+        />
+        <div className="flex w-full items-center justify-center lg:justify-start lg:pl-8">
+          <Card className="w-96 border-dashed bg-card/50">
             <CardContent>
               <h2 className="mb-3 text-xl leading-tight font-semibold">
                 Obsessed with the details,

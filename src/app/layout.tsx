@@ -41,7 +41,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={cn(archivo.variable, geist.variable, "h-dvh w-dvw font-sans antialiased")}>
         <Header />
-        <main className="h-full w-full">{children}</main>
+        <main className="h-full w-full px-4">{children}</main>
         <HilbertBackground mouseRadius={150} order={5} lineWidth={1} tileSize={300} />
       </body>
     </html>

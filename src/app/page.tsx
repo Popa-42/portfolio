@@ -50,7 +50,7 @@ export default function Home() {
   return (
     <div className="flex h-full w-full flex-col justify-center">
       <div className="flex flex-col items-center justify-center lg:flex-row">
-        <div className="flex w-full flex-col items-center justify-center pr-8 lg:items-end">
+        <div className="flex w-full flex-col items-center justify-center pb-8 lg:items-end lg:pr-8 lg:pb-0">
           <div
             ref={touchRef}
             className={`
@@ -58,13 +58,24 @@ export default function Home() {
               after:absolute after:top-0 after:-z-1 after:-m-2 after:h-[calc(100%+1rem)] after:w-[calc(100%+1rem)]
               after:bg-background/90 after:p-2 after:blur-sm
             `}
-            onMouseEnter={handleHover}
-            onTouchStart={handleHover}
           >
-            <h1 className="scroll-m-20 text-center text-3xl font-extrabold tracking-tight text-balance sm:text-4xl">
+            <h2
+              className={`
+                scroll-m-20 text-center text-3xl font-bold tracking-tight text-balance
+                lg:text-end lg:text-4xl
+              `}
+            >
               small details,
-            </h1>
-            <h1 className="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance sm:text-5xl">
+            </h2>
+            <h1
+              className={`
+                scroll-m-20 text-center text-5xl font-extrabold tracking-tight text-balance transition-[scale]
+                duration-250
+                hover:scale-105
+              `}
+              onMouseEnter={handleHover}
+              onTouchStart={handleHover}
+            >
               big{" "}
               <span
                 className={`
@@ -80,16 +91,16 @@ export default function Home() {
         </div>
         <div
           className={`
-            relative my-8 h-0 w-96 border-b
+            relative hidden
             after:absolute after:top-0 after:-z-1 after:-m-2 after:h-[calc(100%+1rem)] after:w-[calc(100%+1rem)]
             after:bg-background after:p-2 after:blur-sm
-            lg:h-full lg:w-0 lg:border-l
+            lg:block lg:h-full lg:w-0 lg:border-l
           `}
         />
         <div className="flex w-full items-center justify-center lg:justify-start lg:pl-8">
-          <Card className="w-96 border-dashed bg-card/50">
+          <Card className="w-96 border-border/50 bg-card/50">
             <CardContent>
-              <h2 className="mb-3 text-xl leading-tight font-semibold">
+              {/*<h2 className="mb-3 text-xl leading-tight font-semibold">
                 Obsessed with the details,
                 <br />
                 eager to{" "}
@@ -101,11 +112,10 @@ export default function Home() {
                 >
                   experiment
                 </span>
-              </h2>
+              </h2>*/}
               <p className="text-muted-foreground">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat.
+                I love crafting interfaces that are as enjoyable to use as they are to look at. This site is my
+                playground for exploring UI, UX, and all the small things in between.
               </p>
             </CardContent>
           </Card>

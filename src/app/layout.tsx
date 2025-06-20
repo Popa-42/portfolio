@@ -5,6 +5,7 @@ import "../../public/assets/styles/globals.css";
 import { Archivo, Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 import HilbertBackground from "@/components/layout/hilbert";
+import Header from "@/components/layout/header";
 
 const archivo = Archivo({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -38,8 +39,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={cn(archivo.variable, geist.variable, "font-sans antialiased")}>
-        <main className="h-dvh w-dvw">{children}</main>
+      <body className={cn(archivo.variable, geist.variable, "h-dvh w-dvw font-sans antialiased")}>
+        <Header />
+        <main className="h-full w-full">{children}</main>
         <HilbertBackground mouseRadius={150} order={5} lineWidth={1} tileSize={300} />
       </body>
     </html>

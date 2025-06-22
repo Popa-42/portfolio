@@ -9,7 +9,7 @@ export function SiteFooter() {
               md:text-left
             `}
           >
-            Made with 💙 by Popa
+            Made with ♥️ by Popa
           </div>
         </div>
       </div>
